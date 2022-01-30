@@ -6,7 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/modules/webview/webview_screen.dart';
 
-
 String? token = "";
 
 Widget buildArticleItem(articles, context) => InkWell(
@@ -31,7 +30,10 @@ Widget buildArticleItem(articles, context) => InkWell(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                    image: NetworkImage("${articles["urlToImage"]}"),
+                    image: articles["urlToImage"] != null
+                        ? NetworkImage("${articles["urlToImage"]}")
+                        : const NetworkImage(
+                            "http://www.keystonetrust.org.uk/wp-content/uploads/2020/06/placeholder-image-1.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -211,4 +213,3 @@ extension StringExtension on String {
     return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
   }
 }
-

@@ -14,9 +14,9 @@ class NewsCubit extends Cubit<NewsStates> {
   int currentIndex = 0;
 
   List<BottomNavigationBarItem> bottomItems = [
-    BottomNavigationBarItem(icon: Icon(Icons.business), label: "Bussiness"),
-    BottomNavigationBarItem(icon: Icon(Icons.sports), label: "Sports"),
-    BottomNavigationBarItem(icon: Icon(Icons.science), label: "Science"),
+    BottomNavigationBarItem(icon: Icon(Icons.business), label: "تجاريه"),
+    BottomNavigationBarItem(icon: Icon(Icons.sports), label: "رياضيه"),
+    BottomNavigationBarItem(icon: Icon(Icons.science), label: "علميه"),
   ];
   List<Widget> screens = [
     BussinessScreen(),
@@ -44,7 +44,7 @@ class NewsCubit extends Cubit<NewsStates> {
     DioHelper.getData(
       url: "v2/top-headlines",
       query: {
-        "country": "us",
+        "country": "eg",
         "category": "business",
         "apiKey": "0b2875b2658e4ed081a27ca12367bd60"
       },
@@ -63,7 +63,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: "v2/top-headlines",
         query: {
-          "country": "us",
+          "country": "eg",
           "category": "sports",
           "apiKey": "0b2875b2658e4ed081a27ca12367bd60"
         },
@@ -85,7 +85,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: "v2/top-headlines",
         query: {
-          "country": "us",
+          "country": "eg",
           "category": "science",
           "apiKey": "0b2875b2658e4ed081a27ca12367bd60"
         },
@@ -112,6 +112,7 @@ class NewsCubit extends Cubit<NewsStates> {
       query: {"q": "$value", "apiKey": "0b2875b2658e4ed081a27ca12367bd60"},
     ).then((value) {
       search = value.data["articles"];
+
       emit(NewsGetSearchSuccessState());
     }).catchError((error) {
       print(error.toString());

@@ -4,9 +4,6 @@ import 'package:news_app/components/components.dart';
 import 'package:news_app/layout/cubit/news_cubit.dart';
 import 'package:news_app/layout/cubit/news_states.dart';
 
-
-
-
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
 
@@ -19,11 +16,11 @@ class SearchScreen extends StatelessWidget {
         var list = NewsCubit.get(context).search;
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Search Screen"),
+            title: const Text("البحث"),
           ),
           body: Column(children: [
             defaultTextField(
-              context: context,
+                context: context,
                 controller: searchController,
                 radius: 25,
                 padding: 20,

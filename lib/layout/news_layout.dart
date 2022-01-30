@@ -19,9 +19,9 @@ class NewsHomeLayout extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Align(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.topRight,
               child: Text(
-                "News App",
+                "اخبار اليوم",
               ),
             ),
             actions: [

@@ -31,9 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => NewsCubit()..getBusiness(),
-        ),
+        BlocProvider(create: (context) => NewsCubit()..getBusiness()),
         BlocProvider(
           create: (context) => AppCubit()..changeAppMode(fromShared: isDark),
         ),
@@ -47,7 +45,8 @@ class MyApp extends StatelessWidget {
             darkTheme: newsDarkTheme,
             themeMode:
                 AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home: const NewsHomeLayout(),
+            home: const Directionality(
+                textDirection: TextDirection.rtl, child: NewsHomeLayout()),
           );
         },
       ),
