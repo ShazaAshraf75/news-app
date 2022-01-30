@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
+            debugShowCheckedModeBanner: true,
             theme: newsLightTheme,
             darkTheme: newsDarkTheme,
             themeMode:
