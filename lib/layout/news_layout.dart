@@ -8,8 +8,8 @@ import 'cubit/app_cubit.dart';
 import 'cubit/news_cubit.dart';
 import 'cubit/news_states.dart';
 
-class HomeLayout extends StatelessWidget {
-  const HomeLayout({Key? key}) : super(key: key);
+class NewsHomeLayout extends StatelessWidget {
+  const NewsHomeLayout({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
